@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "start:staging": "NODE_ENV=staging pm2 start server.js --name nodetestcicd",
+    "restart:staging": "pm2 restart server.js --name nodetestcicd",
+    "start:production": "NODE_ENV=production node index.js"
   },
   "author": "",
   "license": "ISC",
