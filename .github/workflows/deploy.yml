@@ -22,6 +22,7 @@ jobs:
       - name: Deploy via SSH
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
+          export PATH=$PATH:/home/ubuntu/.nvm/versions/node/v22.19.0/bin
             cd ~/TestCICD || git clone https://github.com/asheeshsinghsd/TestCICD.git ~/TestCICD
             cd ~/TestCICD
             git pull origin master
